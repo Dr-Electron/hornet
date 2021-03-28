@@ -212,6 +212,48 @@ For Example: <code>hornet -c config_example.json</code></p>
 <tr><td align="center">bodyLength</td><td align="center">the maximum number of characters that the body of an API call may contain</td><td align="center">string</td></tr>
 <tr><td align="center">maxResults</td><td align="center">the maximum number of results that may be returned by an endpoint</td><td align="center">integer</td></tr>
 </tbody></table>
+<p>Example:</p>
+<pre><code class="language-json">  &quot;restAPI&quot;: {
+    &quot;basicAuth&quot;: {
+      &quot;enabled&quot;: false,
+      &quot;userName&quot;: &quot;admin&quot;,
+      &quot;passwordHash&quot;: &quot;0000000000000000000000000000000000000000000000000000000000000000&quot;,
+      &quot;passwordSalt&quot;: &quot;0000000000000000000000000000000000000000000000000000000000000000&quot;
+    },
+    &quot;excludeHealthCheckFromAuth&quot;: false,
+    &quot;permittedRoutes&quot;: [
+      &quot;/health&quot;,
+      &quot;/mqtt&quot;,
+      &quot;/api/v1/info&quot;,
+      &quot;/api/v1/tips&quot;,
+      &quot;/api/v1/messages/:messageID&quot;,
+      &quot;/api/v1/messages/:messageID/metadata&quot;,
+      &quot;/api/v1/messages/:messageID/raw&quot;,
+      &quot;/api/v1/messages/:messageID/children&quot;,
+      &quot;/api/v1/messages&quot;,
+      &quot;/api/v1/transactions/:transactionID/included-message&quot;,
+      &quot;/api/v1/milestones/:milestoneIndex&quot;,
+      &quot;/api/v1/milestones/:milestoneIndex/utxo-changes&quot;,
+      &quot;/api/v1/outputs/:outputID&quot;,
+      &quot;/api/v1/addresses/:address&quot;,
+      &quot;/api/v1/addresses/:address/outputs&quot;,
+      &quot;/api/v1/addresses/ed25519/:address&quot;,
+      &quot;/api/v1/addresses/ed25519/:address/outputs&quot;,
+      &quot;/api/v1/treasury&quot;
+    ],
+    &quot;whitelistedAddresses&quot;: [
+      &quot;127.0.0.1&quot;,
+      &quot;::1&quot;
+    ],
+    &quot;bindAddress&quot;: &quot;0.0.0.0:14265&quot;,
+    &quot;powEnabled&quot;: true,
+    &quot;powWorkerCount&quot;: 1,
+    &quot;limits&quot;: {
+      &quot;bodyLength&quot;: &quot;1M&quot;,
+      &quot;maxResults&quot;: 1000
+    }
+  },
+</code></pre>
 
                     </main>
 
