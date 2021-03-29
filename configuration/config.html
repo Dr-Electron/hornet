@@ -169,48 +169,48 @@ The default config file is <code>config.json</code>. You can change the path or 
 For Example: <code>hornet -c config_example.json</code></p>
 <h2 id="table-of-content"><a class="header" href="#table-of-content">Table of content</a></h2>
 <ul>
-<li><a href="#1-rest_api">&quot;restAPI&quot;</a>
+<li><a href="#1-rest_api">restAPI</a>
 <ul>
 <li><a href="#basic-auth">Basic auth</a></li>
 <li><a href="#limits">Limits</a></li>
 </ul>
 </li>
-<li><a href="#2-dashboard">&quot;dashboard&quot;</a></li>
-<li><a href="#3-db">&quot;db&quot;</a></li>
-<li><a href="#4-snapshots">&quot;snapshots&quot;</a></li>
-<li><a href="#5-pruning">&quot;pruning&quot;</a></li>
-<li><a href="#6-node">&quot;node&quot;</a></li>
-<li><a href="#7-p2p">&quot;p2p&quot;</a></li>
-<li><a href="#8-p2pdisc">&quot;p2pdisc&quot;</a></li>
-<li><a href="#9-logger">&quot;logger&quot;</a></li>
-<li><a href="#10-spammer">&quot;spammer&quot;</a></li>
-<li><a href="#11-mqtt">&quot;mqtt&quot;</a></li>
-<li><a href="#12-profiling">&quot;profiling&quot;</a></li>
-<li><a href="#13-prometheus">&quot;prometheus&quot;</a></li>
+<li><a href="#2-dashboard">dashboard</a></li>
+<li><a href="#3-db">db</a></li>
+<li><a href="#4-snapshots">snapshots</a></li>
+<li><a href="#5-pruning">pruning</a></li>
+<li><a href="#6-node">node</a></li>
+<li><a href="#7-p2p">p2p</a></li>
+<li><a href="#8-p2pdisc">p2pdisc</a></li>
+<li><a href="#9-logger">logger</a></li>
+<li><a href="#10-spammer">spammer</a></li>
+<li><a href="#11-mqtt">mqtt</a></li>
+<li><a href="#12-profiling">profiling</a></li>
+<li><a href="#13-prometheus">prometheus</a></li>
 </ul>
 <hr />
 <h2 id="1-rest-api"><a class="header" href="#1-rest-api">1. REST API</a></h2>
-<table><thead><tr><th align="center">Name</th><th align="center">Description</th><th align="center">Type</th></tr></thead><tbody>
-<tr><td align="center"><a href="#basic-auth">basicAuth</a></td><td align="center">config for basic auth</td><td align="center">object</td></tr>
-<tr><td align="center">permittedRoutes</td><td align="center">the allowed HTTP REST routes which can be called from non whitelisted addresses</td><td align="center">array of strings</td></tr>
-<tr><td align="center">whitelistedAddresses</td><td align="center">the whitelist of addresses which are allowed to access the REST API</td><td align="center">array of strings</td></tr>
-<tr><td align="center">bindAddress</td><td align="center">the bind address on which the REST API listens on</td><td align="center">string</td></tr>
-<tr><td align="center">powEnabled</td><td align="center">whether the node does PoW if messages are received via API</td><td align="center">bool</td></tr>
-<tr><td align="center">powWorkerCount</td><td align="center">the amount of workers used for calculating PoW when issuing messages via API</td><td align="center">integer</td></tr>
-<tr><td align="center"><a href="#limits">limits</a></td><td align="center">config for api limits</td><td align="center">object</td></tr>
-<tr><td align="center">excludeHealthCheckFromAuth</td><td align="center">whether to allow the health check route anyways</td><td align="center">bool</td></tr>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left"><a href="#basic-auth">basicAuth</a></td><td align="left">config for basic auth</td><td align="left">object</td></tr>
+<tr><td align="left">permittedRoutes</td><td align="left">the allowed HTTP REST routes which can be called from non whitelisted addresses</td><td align="left">array of strings</td></tr>
+<tr><td align="left">whitelistedAddresses</td><td align="left">the whitelist of addresses which are allowed to access the REST API</td><td align="left">array of strings</td></tr>
+<tr><td align="left">bindAddress</td><td align="left">the bind address on which the REST API listens on</td><td align="left">string</td></tr>
+<tr><td align="left">powEnabled</td><td align="left">whether the node does PoW if messages are received via API</td><td align="left">bool</td></tr>
+<tr><td align="left">powWorkerCount</td><td align="left">the amount of workers used for calculating PoW when issuing messages via API</td><td align="left">integer</td></tr>
+<tr><td align="left"><a href="#limits">limits</a></td><td align="left">config for api limits</td><td align="left">object</td></tr>
+<tr><td align="left">excludeHealthCheckFromAuth</td><td align="left">whether to allow the health check route anyways</td><td align="left">bool</td></tr>
 </tbody></table>
 <h3 id="basic-auth"><a class="header" href="#basic-auth">Basic auth</a></h3>
-<table><thead><tr><th align="center">Name</th><th align="center">Description</th><th align="center">Type</th></tr></thead><tbody>
-<tr><td align="center">enabled</td><td align="center">whether to use HTTP basic auth for the REST API</td><td align="center">bool</td></tr>
-<tr><td align="center">userName</td><td align="center">the username of the HTTP basic auth</td><td align="center">string</td></tr>
-<tr><td align="center">passwordHash</td><td align="center">the HTTP basic auth password+salt as a scrypt hash</td><td align="center">string</td></tr>
-<tr><td align="center">passwordSalt</td><td align="center">the HTTP basic auth salt used for hashing the password</td><td align="center">string</td></tr>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">enabled</td><td align="left">whether to use HTTP basic auth for the REST API</td><td align="left">bool</td></tr>
+<tr><td align="left">userName</td><td align="left">the username of the HTTP basic auth</td><td align="left">string</td></tr>
+<tr><td align="left">passwordHash</td><td align="left">the HTTP basic auth password+salt as a scrypt hash</td><td align="left">string</td></tr>
+<tr><td align="left">passwordSalt</td><td align="left">the HTTP basic auth salt used for hashing the password</td><td align="left">string</td></tr>
 </tbody></table>
 <h3 id="limits"><a class="header" href="#limits">Limits</a></h3>
-<table><thead><tr><th align="center">Name</th><th align="center">Description</th><th align="center">Type</th></tr></thead><tbody>
-<tr><td align="center">bodyLength</td><td align="center">the maximum number of characters that the body of an API call may contain</td><td align="center">string</td></tr>
-<tr><td align="center">maxResults</td><td align="center">the maximum number of results that may be returned by an endpoint</td><td align="center">integer</td></tr>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">bodyLength</td><td align="left">the maximum number of characters that the body of an API call may contain</td><td align="left">string</td></tr>
+<tr><td align="left">maxResults</td><td align="left">the maximum number of results that may be returned by an endpoint</td><td align="left">integer</td></tr>
 </tbody></table>
 <p>Example:</p>
 <pre><code class="language-json">  &quot;restAPI&quot;: {
