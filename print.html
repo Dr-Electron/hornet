@@ -97,7 +97,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="welcome.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li class="chapter-item expanded "><a href="tutorials/index.html"><strong aria-hidden="true">2.</strong> Tutorials</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tutorials/1.0/index.html"><strong aria-hidden="true">2.1.</strong> IOTA 1.0</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tutorials/1.0/setup.html"><strong aria-hidden="true">2.1.1.</strong> Setup HORNET</a></li><li class="chapter-item expanded "><a href="tutorials/1.0/private_tangle.html"><strong aria-hidden="true">2.1.2.</strong> Run a private Tangle</a></li><li class="chapter-item expanded "><a href="tutorials/1.0/entry_node.html"><strong aria-hidden="true">2.1.3.</strong> Hosting An Entry Node</a></li></ol></li><li class="chapter-item expanded "><a href="tutorials/1.5/index.html"><strong aria-hidden="true">2.2.</strong> Chrysalis IOTA 1.5</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tutorials/1.5/build.html"><strong aria-hidden="true">2.2.1.</strong> Build HORNET</a></li><li class="chapter-item expanded "><a href="tutorials/1.5/run.html"><strong aria-hidden="true">2.2.2.</strong> Run HORNET</a></li><li class="chapter-item expanded "><a href="tutorials/1.5/private_tangle.html"><strong aria-hidden="true">2.2.3.</strong> Run a private tangle</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="api-reference.html"><strong aria-hidden="true">3.</strong> API Reference</a></li><li class="chapter-item expanded "><a href="troubleshooting.html"><strong aria-hidden="true">4.</strong> Troubleshooting</a></li><li class="chapter-item expanded "><a href="faq.html"><strong aria-hidden="true">5.</strong> FAQ</a></li><li class="chapter-item expanded "><a href="Contribution.html"><strong aria-hidden="true">6.</strong> Contribution</a></li><li class="chapter-item expanded "><a href="code_of_conduct.html"><strong aria-hidden="true">7.</strong> Code of Conduct</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="welcome.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li class="chapter-item expanded "><a href="tutorials/index.html"><strong aria-hidden="true">2.</strong> Tutorials</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tutorials/1.0/index.html"><strong aria-hidden="true">2.1.</strong> IOTA 1.0</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tutorials/1.0/setup.html"><strong aria-hidden="true">2.1.1.</strong> Setup HORNET</a></li><li class="chapter-item expanded "><a href="tutorials/1.0/private_tangle.html"><strong aria-hidden="true">2.1.2.</strong> Run a private Tangle</a></li><li class="chapter-item expanded "><a href="tutorials/1.0/entry_node.html"><strong aria-hidden="true">2.1.3.</strong> Hosting An Entry Node</a></li></ol></li><li class="chapter-item expanded "><a href="tutorials/1.5/index.html"><strong aria-hidden="true">2.2.</strong> Chrysalis IOTA 1.5</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tutorials/1.5/build.html"><strong aria-hidden="true">2.2.1.</strong> Build HORNET</a></li><li class="chapter-item expanded "><a href="tutorials/1.5/run.html"><strong aria-hidden="true">2.2.2.</strong> Run HORNET</a></li><li class="chapter-item expanded "><a href="tutorials/1.5/private_tangle.html"><strong aria-hidden="true">2.2.3.</strong> Run a private tangle</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="configuration/index.html"><strong aria-hidden="true">3.</strong> Configuration</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="configuration/config.html"><strong aria-hidden="true">3.1.</strong> config.json</a></li><li class="chapter-item expanded "><a href="configuration/peering.html"><strong aria-hidden="true">3.2.</strong> peering.json</a></li><li class="chapter-item expanded "><a href="configuration/profiles.html"><strong aria-hidden="true">3.3.</strong> profiles.json</a></li></ol></li><li class="chapter-item expanded "><a href="api-reference.html"><strong aria-hidden="true">4.</strong> API Reference</a></li><li class="chapter-item expanded "><a href="troubleshooting.html"><strong aria-hidden="true">5.</strong> Troubleshooting</a></li><li class="chapter-item expanded "><a href="faq.html"><strong aria-hidden="true">6.</strong> FAQ</a></li><li class="chapter-item expanded "><a href="Contribution.html"><strong aria-hidden="true">7.</strong> Contribution</a></li><li class="chapter-item expanded "><a href="code_of_conduct.html"><strong aria-hidden="true">8.</strong> Code of Conduct</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -699,7 +699,7 @@ Test, if the build was successful:</p>
 </ul>
 <h3 id="configuration-3"><a class="header" href="#configuration-3">Configuration</a></h3>
 <p>The scripts in the <em>alphanet</em> folder of the HORNET repository, which we will use to run the coordinator and the nodes, are preconfigured. By default they will distribute the tokens to the following address:</p>
-<pre><code>atoi1qpszqzadsym6wpppd6z037dvlejmjuke7s24hm95s9fg9vpua7vluehe53e
+<pre><code>atoi1qraeme05jv3emlcktet5asl4hc837kjvne8ly45ddvfhg30tunl5q7097cy
 </code></pre>
 <p>If you want to use an existing address, search for your address in <a href="https://explorer.iota.org/chrysalis">the Chrysalis explorer</a> and look for the corresponding ED25519 address. Find the <em>create_snapshot_alphanet</em> script in the <em>alphanet</em> directory and change the following line to use your ED25519 address:</p>
 <pre><code class="language-bash">...
@@ -714,14 +714,684 @@ go run &quot;..\main.go&quot; tool snapgen alphanet1 [ADDRESS] 1000000000 &quot;
 <p>Congratulations, you are now running a private network! To monitor your coordinator, you can find the dashboard at <a href="http://localhost:8081">http://localhost:8081</a>.</p>
 <h3 id="use-a-wallet-to-manage-the-tokens"><a class="header" href="#use-a-wallet-to-manage-the-tokens">Use a wallet to manage the tokens</a></h3>
 <p>To easily access the tokens on the network, we need to take one more step. If you used the default configuration, use the following mnemonic to set up a wallet:</p>
-<pre><code>giant dynamic museum toddler six deny defense ostrich bomb access mercy blood explain muscle shoot shallow glad autumn author calm heavy hawk abuse rally
+<pre><code>social wolf hungry label salute hover sudden rain disease upgrade throw quick amazing clinic night
 </code></pre>
 <p>Now connect your wallet to one of the nodes that are running and you should be able to find the tokens distributed to your wallet.</p>
 <p>Using <a href="https://github.com/iotaledger/cli-wallet">the cli-wallet</a>, the commands would be:</p>
-<pre><code class="language-bash">&gt; wallet mnemonic &quot;giant dynamic museum toddler six deny defense ostrich bomb access mercy blood explain muscle shoot shallow glad autumn author calm heavy hawk abuse rally&quot;
+<pre><code class="language-bash">&gt; wallet mnemonic &quot;social wolf hungry label salute hover sudden rain disease upgrade throw quick amazing clinic night&quot;
 &gt; wallet new --node &quot;http://localhost:14266&quot; --alias EXAMPLE
 </code></pre>
 <p>You are now all set to start using your own private tangle!</p>
+<h1 id="configuration-4"><a class="header" href="#configuration-4">Configuration</a></h1>
+<ul>
+<li><a href="configuration/./config.html">config.json</a></li>
+<li><a href="configuration/./peering.html">peering.json</a></li>
+<li><a href="configuration/./profiles.html">profiles.json</a></li>
+</ul>
+<h1 id="configjson"><a class="header" href="#configjson">config.json</a></h1>
+<p>Hornet uses the JSON standard as config file. If you are unsure about some syntax have a look at the official specs <a href="https://www.json.org">here</a>.
+The default config file is <code>config.json</code>. You can change the path or name of the config file by using the <code>-c</code> or <code>--config</code> flag.
+For Example: <code>hornet -c config_example.json</code>.<br />
+You can always get the most up-to-date description of the config parameters by running <code>hornet -h --full</code>.</p>
+<h2 id="table-of-content"><a class="header" href="#table-of-content">Table of content</a></h2>
+<ul>
+<li><a href="configuration/config.html#1-rest-api">1. REST API</a>
+<ul>
+<li><a href="configuration/config.html#basic-auth">Basic auth</a></li>
+<li><a href="configuration/config.html#limits">Limits</a></li>
+</ul>
+</li>
+<li><a href="configuration/config.html#2-dashboard">2. Dashboard</a>
+<ul>
+<li><a href="configuration/config.html#auth">Auth</a></li>
+</ul>
+</li>
+<li><a href="configuration/config.html#3-db">3. DB</a></li>
+<li><a href="configuration/config.html#4-snapshots">4. Snapshots</a>
+<ul>
+<li><a href="configuration/config.html#downloadurls">DownloadURLs</a></li>
+</ul>
+</li>
+<li><a href="configuration/config.html#5-pruning">5. Pruning</a></li>
+<li><a href="configuration/config.html#6-protocol">6. Protocol</a>
+<ul>
+<li><a href="configuration/config.html#publickeyranges">PublicKeyRanges</a></li>
+</ul>
+</li>
+<li><a href="configuration/config.html#7-requsts">7. Requsts</a></li>
+<li><a href="configuration/config.html#8-coordinator">8. Coordinator</a>
+<ul>
+<li><a href="configuration/config.html#checkpoints">Checkpoints</a></li>
+<li><a href="configuration/config.html#quorum">Quorum</a>
+<ul>
+<li><a href="configuration/config.html#groups">Groups</a>
+<ul>
+<li><a href="configuration/config.html#-group-name-">{GROUP_NAME}</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="configuration/config.html#signing">Signing</a></li>
+<li><a href="configuration/config.html#tipsel">Tipsel</a></li>
+</ul>
+</li>
+<li><a href="configuration/config.html#9-tipsel">9. Tipsel</a>
+<ul>
+<li><a href="configuration/config.html#nonlazy">NonLazy</a></li>
+<li><a href="configuration/config.html#semilazy">SemiLazy</a></li>
+</ul>
+</li>
+<li><a href="configuration/config.html#10-node">10. Node</a></li>
+<li><a href="configuration/config.html#11-p2p">11. P2P</a>
+<ul>
+<li><a href="configuration/config.html#connectionmanager">ConnectionManager</a></li>
+<li><a href="configuration/config.html#peerstore">PeerStore</a></li>
+</ul>
+</li>
+<li><a href="configuration/config.html#13-logger">13. Logger</a></li>
+<li><a href="configuration/config.html#14-warpsync">14. Warpsync</a></li>
+<li><a href="configuration/config.html#15-spammer">15. Spammer</a></li>
+<li><a href="configuration/config.html#16-mqtt">16. MQTT</a></li>
+<li><a href="configuration/config.html#17-profiling">17. Profiling</a></li>
+<li><a href="configuration/config.html#18-prometheus">18. Prometheus</a>
+<ul>
+<li><a href="configuration/config.html#fileservicediscovery">FileServiceDiscovery</a></li>
+</ul>
+</li>
+<li><a href="configuration/config.html#19-gossip">19. Gossip</a></li>
+<li><a href="configuration/config.html#20-debug">20. Debug</a></li>
+<li><a href="configuration/config.html#21-legacy">21. Legacy</a></li>
+<li><a href="configuration/config.html#211-migrator">21.1 Migrator</a></li>
+<li><a href="configuration/config.html#212-receipts">21.2 Receipts</a>
+<ul>
+<li><a href="configuration/config.html#backup">Backup</a></li>
+<li><a href="configuration/config.html#validator">Validator</a>
+<ul>
+<li><a href="configuration/config.html#api">Api</a></li>
+<li><a href="configuration/config.html#coordinator">Coordinator</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="1-rest-api"><a class="header" href="#1-rest-api">1. REST API</a></h2>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left"><a href="configuration/config.html#basic-auth">basicAuth</a></td><td align="left">config for basic auth</td><td align="left">object</td></tr>
+<tr><td align="left">permittedRoutes</td><td align="left">the allowed HTTP REST routes which can be called from non whitelisted addresses</td><td align="left">array of strings</td></tr>
+<tr><td align="left">whitelistedAddresses</td><td align="left">the whitelist of addresses which are allowed to access the REST API</td><td align="left">array of strings</td></tr>
+<tr><td align="left">bindAddress</td><td align="left">the bind address on which the REST API listens on</td><td align="left">string</td></tr>
+<tr><td align="left">powEnabled</td><td align="left">whether the node does PoW if messages are received via API</td><td align="left">bool</td></tr>
+<tr><td align="left">powWorkerCount</td><td align="left">the amount of workers used for calculating PoW when issuing messages via API</td><td align="left">integer</td></tr>
+<tr><td align="left"><a href="configuration/config.html#limits">limits</a></td><td align="left">config for api limits</td><td align="left">object</td></tr>
+<tr><td align="left">excludeHealthCheckFromAuth</td><td align="left">whether to allow the health check route anyways</td><td align="left">bool</td></tr>
+</tbody></table>
+<h3 id="basic-auth"><a class="header" href="#basic-auth">Basic auth</a></h3>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">enabled</td><td align="left">whether to use HTTP basic auth for the REST API</td><td align="left">bool</td></tr>
+<tr><td align="left">userName</td><td align="left">the username of the HTTP basic auth</td><td align="left">string</td></tr>
+<tr><td align="left">passwordHash</td><td align="left">the HTTP basic auth password+salt as a scrypt hash</td><td align="left">string</td></tr>
+<tr><td align="left">passwordSalt</td><td align="left">the HTTP basic auth salt used for hashing the password</td><td align="left">string</td></tr>
+</tbody></table>
+<h3 id="limits"><a class="header" href="#limits">Limits</a></h3>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">bodyLength</td><td align="left">the maximum number of characters that the body of an API call may contain</td><td align="left">string</td></tr>
+<tr><td align="left">maxResults</td><td align="left">the maximum number of results that may be returned by an endpoint</td><td align="left">integer</td></tr>
+</tbody></table>
+<p>Example:</p>
+<pre><code class="language-json">  &quot;restAPI&quot;: {
+    &quot;basicAuth&quot;: {
+      &quot;enabled&quot;: false,
+      &quot;userName&quot;: &quot;admin&quot;,
+      &quot;passwordHash&quot;: &quot;0000000000000000000000000000000000000000000000000000000000000000&quot;,
+      &quot;passwordSalt&quot;: &quot;0000000000000000000000000000000000000000000000000000000000000000&quot;
+    },
+    &quot;excludeHealthCheckFromAuth&quot;: false,
+    &quot;permittedRoutes&quot;: [
+      &quot;/health&quot;,
+      &quot;/mqtt&quot;,
+      &quot;/api/v1/info&quot;,
+      &quot;/api/v1/tips&quot;,
+      &quot;/api/v1/messages/:messageID&quot;,
+      &quot;/api/v1/messages/:messageID/metadata&quot;,
+      &quot;/api/v1/messages/:messageID/raw&quot;,
+      &quot;/api/v1/messages/:messageID/children&quot;,
+      &quot;/api/v1/messages&quot;,
+      &quot;/api/v1/transactions/:transactionID/included-message&quot;,
+      &quot;/api/v1/milestones/:milestoneIndex&quot;,
+      &quot;/api/v1/milestones/:milestoneIndex/utxo-changes&quot;,
+      &quot;/api/v1/outputs/:outputID&quot;,
+      &quot;/api/v1/addresses/:address&quot;,
+      &quot;/api/v1/addresses/:address/outputs&quot;,
+      &quot;/api/v1/addresses/ed25519/:address&quot;,
+      &quot;/api/v1/addresses/ed25519/:address/outputs&quot;,
+      &quot;/api/v1/treasury&quot;
+    ],
+    &quot;whitelistedAddresses&quot;: [
+      &quot;127.0.0.1&quot;,
+      &quot;::1&quot;
+    ],
+    &quot;bindAddress&quot;: &quot;0.0.0.0:14265&quot;,
+    &quot;powEnabled&quot;: false,
+    &quot;powWorkerCount&quot;: 1,
+    &quot;limits&quot;: {
+      &quot;bodyLength&quot;: &quot;1M&quot;,
+      &quot;maxResults&quot;: 1000
+    }
+  },
+</code></pre>
+<h2 id="2-dashboard"><a class="header" href="#2-dashboard">2. Dashboard</a></h2>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">bindAddress</td><td align="left">the bind address on which the dashboard can be access from</td><td align="left">string</td></tr>
+<tr><td align="left">dev</td><td align="left">whether to run the dashboard in dev mode</td><td align="left">bool</td></tr>
+<tr><td align="left"><a href="configuration/config.html#auth">auth</a></td><td align="left">config for dashboard auth</td><td align="left">object</td></tr>
+</tbody></table>
+<h3 id="auth"><a class="header" href="#auth">Auth</a></h3>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">sessionTimeout</td><td align="left">how long the auth session should last before expiring</td><td align="left">string</td></tr>
+<tr><td align="left">username</td><td align="left">the auth username</td><td align="left">string</td></tr>
+<tr><td align="left">passwordHash</td><td align="left">the auth password+salt as a scrypt hash</td><td align="left">string</td></tr>
+<tr><td align="left">passwordSalt</td><td align="left">the auth salt used for hashing the password</td><td align="left">string</td></tr>
+</tbody></table>
+<p>Example:</p>
+<pre><code class="language-json">  &quot;dashboard&quot;: {
+    &quot;bindAddress&quot;: &quot;localhost:8081&quot;,
+    &quot;dev&quot;: false,
+    &quot;auth&quot;: {
+      &quot;sessionTimeout&quot;: &quot;72h&quot;,
+      &quot;username&quot;: &quot;admin&quot;,
+      &quot;passwordHash&quot;: &quot;0000000000000000000000000000000000000000000000000000000000000000&quot;,
+      &quot;passwordSalt&quot;: &quot;0000000000000000000000000000000000000000000000000000000000000000&quot;
+    }
+  },
+</code></pre>
+<h2 id="3-db"><a class="header" href="#3-db">3. DB</a></h2>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">engine</td><td align="left">the used database engine (pebble/bolt/rocksdb)</td><td align="left">string</td></tr>
+<tr><td align="left">path</td><td align="left">the path to the database folder</td><td align="left">string</td></tr>
+<tr><td align="left">autoRevalidation</td><td align="left">whether to automatically start revalidation on startup if the database is corrupted</td><td align="left">bool</td></tr>
+<tr><td align="left">debug</td><td align="left">ignore the check for corrupted databases (should only be used for debug reasons)</td><td align="left">bool</td></tr>
+</tbody></table>
+<p>Example:</p>
+<pre><code class="language-json">  &quot;db&quot;: {
+    &quot;engine&quot;: &quot;pebble&quot;,
+    &quot;path&quot;: &quot;mainnetdb&quot;,
+    &quot;autoRevalidation&quot;: false,
+    &quot;debug&quot;: false,
+  },
+</code></pre>
+<h2 id="4-snapshots"><a class="header" href="#4-snapshots">4. Snapshots</a></h2>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">interval</td><td align="left">interval, in milestones, at which snapshot files are created (snapshots are only created if the node is synced)</td><td align="left">integer</td></tr>
+<tr><td align="left">depth</td><td align="left">the depth, respectively the starting point, at which a snapshot of the ledger is generated</td><td align="left">integer</td></tr>
+<tr><td align="left">fullPath</td><td align="left">path to the full snapshot file</td><td align="left">string</td></tr>
+<tr><td align="left">deltaPath</td><td align="left">path to the delta snapshot file</td><td align="left">string</td></tr>
+<tr><td align="left"><a href="configuration/config.html#downloadurls">downloadURLs</a></td><td align="left">URLs to load the snapshot files from.</td><td align="left">array of objects</td></tr>
+</tbody></table>
+<h3 id="downloadurls"><a class="header" href="#downloadurls">DownloadURLs</a></h3>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">full</td><td align="left">download link to the full snapshot file</td><td align="left">string</td></tr>
+<tr><td align="left">delta</td><td align="left">download link to the delta snapshot file</td><td align="left">string</td></tr>
+</tbody></table>
+<p>Example:</p>
+<pre><code class="language-json">&quot;snapshots&quot;: {
+    &quot;interval&quot;: 50,
+    &quot;depth&quot;: 50,
+    &quot;fullPath&quot;: &quot;snapshots/mainnet/full_export.bin&quot;,
+    &quot;deltaPath&quot;: &quot;snapshots/mainnet/delta_export.bin&quot;,
+    &quot;downloadURLs&quot;: [
+      {
+        &quot;full&quot;: &quot;https://source1.example.com/full_export.bin&quot;,
+        &quot;delta&quot;: &quot;https://source1.example.com/delta_export.bin&quot;
+      },
+      {
+        &quot;full&quot;: &quot;https://source2.example.com/full_export.bin&quot;,
+        &quot;delta&quot;: &quot;https://source2.example.com/delta_export.bin&quot;
+      }
+    ]
+  },
+</code></pre>
+<h2 id="5-pruning"><a class="header" href="#5-pruning">5. Pruning</a></h2>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">enabled</td><td align="left">whether to delete old message data from the database</td><td align="left">bool</td></tr>
+<tr><td align="left">delay</td><td align="left">amount of milestone cones to keep in the database</td><td align="left">integer</td></tr>
+<tr><td align="left">pruneReceipts</td><td align="left">whether to delete old receipts data from the database</td><td align="left">bool</td></tr>
+</tbody></table>
+<p>Example:</p>
+<pre><code class="language-json">  &quot;pruning&quot;: {
+    &quot;enabled&quot;: true,
+    &quot;delay&quot;: 60480,
+    &quot;pruneReceipts&quot;: false
+  },
+</code></pre>
+<h2 id="6-protocol"><a class="header" href="#6-protocol">6. Protocol</a></h2>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">networkID</td><td align="left">the network ID on which this node operates on</td><td align="left">string</td></tr>
+<tr><td align="left">bech32HRP</td><td align="left">the HRP which should be used for Bech32 addresses</td><td align="left">string</td></tr>
+<tr><td align="left">minPoWScore</td><td align="left">the minimum PoW score required by the network</td><td align="left">float</td></tr>
+<tr><td align="left">milestonePublicKeyCount</td><td align="left">the amount of public keys in a milestone</td><td align="left">integer</td></tr>
+<tr><td align="left"><a href="configuration/config.html#publickeyranges">publicKeyRanges</a></td><td align="left">List of public key ranges from the coordinator</td><td align="left">array of objects</td></tr>
+</tbody></table>
+<h3 id="publickeyranges"><a class="header" href="#publickeyranges">PublicKeyRanges</a></h3>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">key</td><td align="left">public key</td><td align="left">string</td></tr>
+<tr><td align="left">start</td><td align="left">start</td><td align="left">integer</td></tr>
+<tr><td align="left">end</td><td align="left">end</td><td align="left">integer</td></tr>
+</tbody></table>
+<p>Example:</p>
+<pre><code class="language-json">  &quot;protocol&quot;: {
+    &quot;networkID&quot;: &quot;mainnet1&quot;,
+    &quot;bech32HRP&quot;: &quot;iota&quot;,
+    &quot;minPoWScore&quot;: 4000,
+    &quot;milestonePublicKeyCount&quot;: 2,
+    &quot;publicKeyRanges&quot;: [
+      {
+        &quot;key&quot;: &quot;7205c145525cee64f1c9363696811d239919d830ad964b4e29359e6475848f5a&quot;,
+        &quot;start&quot;: 0,
+        &quot;end&quot;: 0
+      },
+      {
+        &quot;key&quot;: &quot;e468e82df33d10dea3bd0eadcd7867946a674d207c39f5af4cc44365d268a7e6&quot;,
+        &quot;start&quot;: 0,
+        &quot;end&quot;: 0
+      },
+      {
+        &quot;key&quot;: &quot;0758028d34508079ba1f223907ac3bb5ce8f6bdccc6b961c7c85a2f460b30c1d&quot;,
+        &quot;start&quot;: 0,
+        &quot;end&quot;: 0
+      }
+    ]
+  },
+</code></pre>
+<h2 id="7-requsts"><a class="header" href="#7-requsts">7. Requsts</a></h2>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">discardOlderThan</td><td align="left">the maximum time a request stays in the request queue</td><td align="left">string</td></tr>
+<tr><td align="left">pendingReEnqueueInterval</td><td align="left">the interval the pending requests are re-enqueued</td><td align="left">string</td></tr>
+</tbody></table>
+<p>Example:</p>
+<pre><code class="language-json">  &quot;requests&quot;: {
+    &quot;discardOlderThan&quot;: &quot;15s&quot;,
+    &quot;pendingReEnqueueInterval&quot;: &quot;5s&quot;
+  },
+</code></pre>
+<h2 id="8-coordinator"><a class="header" href="#8-coordinator">8. Coordinator</a></h2>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left"><a href="configuration/config.html#checkpoints">checkpoints</a></td><td align="left">config for checkpoints</td><td align="left">object</td></tr>
+<tr><td align="left">interval</td><td align="left">the interval milestones are issued</td><td align="left">string</td></tr>
+<tr><td align="left">powWorkerCount</td><td align="left">the amount of workers used for calculating PoW when issuing checkpoints and milestones</td><td align="left">integer</td></tr>
+<tr><td align="left"><a href="configuration/config.html#quorum">quorum</a></td><td align="left">config for quorum</td><td align="left">object</td></tr>
+<tr><td align="left"><a href="configuration/config.html#signing">signing</a></td><td align="left">config for signing</td><td align="left">object</td></tr>
+<tr><td align="left">stateFilePath</td><td align="left">the path to the state file of the coordinator</td><td align="left">string</td></tr>
+<tr><td align="left"><a href="configuration/config.html#tipsel">tipsel</a></td><td align="left">config for tip selection</td><td align="left">object</td></tr>
+</tbody></table>
+<h3 id="checkpoints"><a class="header" href="#checkpoints">Checkpoints</a></h3>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">maxTrackedMessages</td><td align="left">maximum amount of known messages for milestone tipselection</td><td align="left">integer</td></tr>
+</tbody></table>
+<h3 id="quorum"><a class="header" href="#quorum">Quorum</a></h3>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">enabled</td><td align="left">whether the coordinator quorum is enabled</td><td align="left">bool</td></tr>
+<tr><td align="left"><a href="configuration/config.html#groups">groups</a></td><td align="left">the quorum groups used to ask other nodes for correct ledger state of the coordinator</td><td align="left">Array of object arrays</td></tr>
+<tr><td align="left">timeout</td><td align="left">the timeout until a node in the quorum must have answered</td><td align="left">string</td></tr>
+</tbody></table>
+<h4 id="groups"><a class="header" href="#groups">Groups</a></h4>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left"><a href="configuration/config.html#group_name">{GROUP_NAME}</a></td><td align="left">the qourum group used to ask other nodes for correct ledger state of the coordinator</td><td align="left">Array of objects</td></tr>
+</tbody></table>
+<h5 id="group_name"><a class="header" href="#group_name">{GROUP_NAME}</a></h5>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">alias</td><td align="left">alias of the quorum client (optional)</td><td align="left">string</td></tr>
+<tr><td align="left">baseURL</td><td align="left">baseURL of the quorum client</td><td align="left">string</td></tr>
+<tr><td align="left">userName</td><td align="left">username for basic auth (optional)</td><td align="left">string</td></tr>
+<tr><td align="left">password</td><td align="left">password for basic auth (optional)</td><td align="left">string</td></tr>
+</tbody></table>
+<h3 id="signing"><a class="header" href="#signing">Signing</a></h3>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">provider</td><td align="left">the signing provider the coordinator uses to sign a milestone (local/remote)</td><td align="left">string</td></tr>
+<tr><td align="left">remoteAddress</td><td align="left">the address of the remote signing provider (insecure connection!)</td><td align="left">string</td></tr>
+</tbody></table>
+<h3 id="tipsel"><a class="header" href="#tipsel">Tipsel</a></h3>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">heaviestBranchSelectionTimeout</td><td align="left">the maximum duration to select the heaviest branch tips</td><td align="left">string</td></tr>
+<tr><td align="left">maxHeaviestBranchTipsPerCheckpoint</td><td align="left">maximum amount of checkpoint messages with heaviest branch tips</td><td align="left">integer</td></tr>
+<tr><td align="left">minHeaviestBranchUnreferencedMessagesThreshold</td><td align="left">minimum threshold of unreferenced messages in the heaviest branch</td><td align="left">integer</td></tr>
+<tr><td align="left">randomTipsPerCheckpoint</td><td align="left">amount of checkpoint messages with random tips</td><td align="left">integer</td></tr>
+</tbody></table>
+<p>Example:</p>
+<pre><code class="language-json">  &quot;coordinator&quot;: {
+    &quot;stateFilePath&quot;: &quot;coordinator.state&quot;,
+    &quot;interval&quot;: &quot;10s&quot;,
+    &quot;powWorkerCount&quot;: 15,
+    &quot;checkpoints&quot;: {
+      &quot;maxTrackedMessages&quot;: 10000
+    },
+    &quot;tipsel&quot;: {
+      &quot;minHeaviestBranchUnreferencedMessagesThreshold&quot;: 20,
+      &quot;maxHeaviestBranchTipsPerCheckpoint&quot;: 10,
+      &quot;randomTipsPerCheckpoint&quot;: 3,
+      &quot;heaviestBranchSelectionTimeout&quot;: &quot;100ms&quot;
+    },
+    &quot;signing&quot;: {
+      &quot;provider&quot;: &quot;local&quot;,
+      &quot;remoteAddress&quot;: &quot;localhost:12345&quot;
+    },
+    &quot;quorum&quot;: {
+      &quot;enabled&quot;: false,
+      &quot;groups&quot;: {
+        &quot;hornet&quot;: [
+          {
+            &quot;alias&quot;: &quot;hornet1&quot;,
+            &quot;baseURL&quot;: &quot;http://hornet1.example.com:14265&quot;,
+            &quot;userName&quot;: &quot;&quot;,
+            &quot;password&quot;: &quot;&quot;
+          }
+        ],
+        &quot;bee&quot;: [
+          {
+            &quot;alias&quot;: &quot;bee1&quot;,
+            &quot;baseURL&quot;: &quot;http://bee1.example.com:14265&quot;,
+            &quot;userName&quot;: &quot;&quot;,
+            &quot;password&quot;: &quot;&quot;
+          }
+        ]
+      },
+      &quot;timeout&quot;: &quot;2s&quot;
+    }
+  },
+</code></pre>
+<h2 id="9-tipsel"><a class="header" href="#9-tipsel">9. Tipsel</a></h2>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">maxDeltaMsgYoungestConeRootIndexToCMI</td><td align="left">the maximum allowed delta value for the YCRI of a given message in relation to the current CMI before it gets lazy</td><td align="left">integer</td></tr>
+<tr><td align="left">maxDeltaMsgOldestConeRootIndexToCMI</td><td align="left">the maximum allowed delta value between OCRI of a given message in relation to the current CMI before it gets semi-lazy</td><td align="left">integer</td></tr>
+<tr><td align="left">belowMaxDepth</td><td align="left">the maximum allowed delta value for the OCRI of a given message in relation to the current CMI before it gets lazy</td><td align="left">integer</td></tr>
+<tr><td align="left"><a href="configuration/nonlazy">nonLazy</a></td><td align="left">config for tips from the non-lazy pool</td><td align="left">object</td></tr>
+<tr><td align="left"><a href="configuration/semilazy">semiLazy</a></td><td align="left">config for tips from the semi-lazy pool</td><td align="left">object</td></tr>
+</tbody></table>
+<h3 id="nonlazy"><a class="header" href="#nonlazy">NonLazy</a></h3>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">retentionRulesTipsLimit</td><td align="left">the maximum number of current tips for which the retention rules are checked (non-lazy)</td><td align="left">integer</td></tr>
+<tr><td align="left">maxReferencedTipAge</td><td align="left">the maximum time a tip remains in the tip pool after it was referenced by the first message (non-lazy)</td><td align="left">string</td></tr>
+<tr><td align="left">maxChildren</td><td align="left">the maximum amount of references by other messages before the tip is removed from the tip pool (non-lazy)</td><td align="left">integer</td></tr>
+<tr><td align="left">spammerTipsThreshold</td><td align="left">the maximum amount of tips in a tip-pool (non-lazy) before the spammer tries to reduce these</td><td align="left">integer</td></tr>
+</tbody></table>
+<h3 id="semilazy"><a class="header" href="#semilazy">SemiLazy</a></h3>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">retentionRulesTipsLimit</td><td align="left">the maximum number of current tips for which the retention rules are checked (semi-lazy)</td><td align="left">integer</td></tr>
+<tr><td align="left">maxReferencedTipAge</td><td align="left">the maximum time a tip remains in the tip pool after it was referenced by the first message (semi-lazy)</td><td align="left">string</td></tr>
+<tr><td align="left">maxChildren</td><td align="left">the maximum amount of references by other messages before the tip is removed from the tip pool (semi-lazy)</td><td align="left">integer</td></tr>
+<tr><td align="left">spammerTipsThreshold</td><td align="left">the maximum amount of tips in a tip-pool (semi-lazy) before the spammer tries to reduce these</td><td align="left">integer</td></tr>
+</tbody></table>
+<p>Example:</p>
+<pre><code class="language-json">  &quot;tipsel&quot;: {
+    &quot;maxDeltaMsgYoungestConeRootIndexToCMI&quot;: 8,
+    &quot;maxDeltaMsgOldestConeRootIndexToCMI&quot;: 13,
+    &quot;belowMaxDepth&quot;: 15,
+    &quot;nonLazy&quot;: {
+      &quot;retentionRulesTipsLimit&quot;: 100,
+      &quot;maxReferencedTipAge&quot;: &quot;3s&quot;,
+      &quot;maxChildren&quot;: 30,
+      &quot;spammerTipsThreshold&quot;: 0
+    },
+    &quot;semiLazy&quot;: {
+      &quot;retentionRulesTipsLimit&quot;: 20,
+      &quot;maxReferencedTipAge&quot;: &quot;3s&quot;,
+      &quot;maxChildren&quot;: 2,
+      &quot;spammerTipsThreshold&quot;: 30
+    }
+  },
+</code></pre>
+<h2 id="10-node"><a class="header" href="#10-node">10. Node</a></h2>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">alias</td><td align="left">the alias to identify a node</td><td align="left">string</td></tr>
+<tr><td align="left">profile</td><td align="left">Sets the profile with which the node runs</td><td align="left">string</td></tr>
+<tr><td align="left">disablePlugins</td><td align="left">a list of plugins that shall be disabled</td><td align="left">array of strings</td></tr>
+<tr><td align="left">enablePlugins</td><td align="left">a list of plugins that shall be enabled</td><td align="left">array of strings</td></tr>
+</tbody></table>
+<p>Example:</p>
+<pre><code class="language-json">  &quot;node&quot;: {
+    &quot;alias&quot;: &quot;Mainnet&quot;,
+    &quot;profile&quot;: &quot;auto&quot;,
+    &quot;disablePlugins&quot;: [
+      &quot;Warpsync&quot;
+    ],
+    &quot;enablePlugins&quot;: [
+      &quot;Prometheus&quot;,
+      &quot;Spammer&quot;
+    ]
+  },
+</code></pre>
+<h2 id="11-p2p"><a class="header" href="#11-p2p">11. P2P</a></h2>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">bindMultiAddresses</td><td align="left">the bind addresses for this node</td><td align="left">array of strings</td></tr>
+<tr><td align="left"><a href="configuration/config.html#connectionmanager">connectionManager</a></td><td align="left">config for connection manager</td><td align="left">object</td></tr>
+<tr><td align="left">gossipUnknownPeersLimit</td><td align="left">maximum amount of unknown peers a gossip protocol connection is established to</td><td align="left">integer</td></tr>
+<tr><td align="left">identityPrivateKey</td><td align="left">private key used to derive the node identity (optional)</td><td align="left">string</td></tr>
+<tr><td align="left"><a href="configuration/config.html#peerstore">peerStore</a></td><td align="left">config for peer store</td><td align="left">object</td></tr>
+<tr><td align="left">reconnectInterval</td><td align="left">the time to wait before trying to reconnect to a disconnected peer</td><td align="left">string</td></tr>
+</tbody></table>
+<h3 id="connectionmanager"><a class="header" href="#connectionmanager">ConnectionManager</a></h3>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">highWatermark</td><td align="left">the threshold up on which connections count truncates to the lower watermark</td><td align="left">integer</td></tr>
+<tr><td align="left">lowWatermark</td><td align="left">the minimum connections count to hold after the high watermark was reached</td><td align="left">integer</td></tr>
+</tbody></table>
+<h3 id="peerstore"><a class="header" href="#peerstore">PeerStore</a></h3>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">path</td><td align="left">the path to the peer store</td><td align="left">string</td></tr>
+</tbody></table>
+<p>Example:</p>
+<pre><code class="language-json">  &quot;p2p&quot;: {
+    &quot;bindMultiAddresses&quot;: [
+      &quot;/ip4/127.0.0.1/tcp/15600&quot;
+    ],
+    &quot;connectionManager&quot;: {
+      &quot;highWatermark&quot;: 10,
+      &quot;lowWatermark&quot;: 5
+    },
+    &quot;gossipUnknownPeersLimit&quot;: 4,
+    &quot;identityPrivateKey&quot;: &quot;&quot;,
+    &quot;peerStore&quot;: {
+      &quot;path&quot;: &quot;./p2pstore&quot;
+    },
+    &quot;reconnectInterval&quot;: &quot;30s&quot;
+  },
+</code></pre>
+<h2 id="13-logger"><a class="header" href="#13-logger">13. Logger</a></h2>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">level</td><td align="left">the minimum enabled logging level. Valid values are: &quot;debug&quot;, &quot;info&quot;, &quot;warn&quot;, &quot;error&quot;, &quot;dpanic&quot;, &quot;panic&quot;, &quot;fatal&quot;</td><td align="left">string</td></tr>
+<tr><td align="left">disableCaller</td><td align="left">stops annotating logs with the calling function's file name and line number</td><td align="left">bool</td></tr>
+<tr><td align="left">encoding</td><td align="left">sets the logger's encoding. Valid values are &quot;json&quot; and &quot;console&quot;</td><td align="left">string</td></tr>
+<tr><td align="left">outputPaths</td><td align="left">a list of URLs, file paths or stdout/stderr to write logging output to</td><td align="left">array of strings</td></tr>
+</tbody></table>
+<p>Example:</p>
+<pre><code class="language-json">  &quot;logger&quot;: {
+    &quot;level&quot;: &quot;info&quot;,
+    &quot;disableCaller&quot;: true,
+    &quot;encoding&quot;: &quot;console&quot;,
+    &quot;outputPaths&quot;: [
+      &quot;stdout&quot;,
+      &quot;hornet.log&quot;
+    ]
+  },
+</code></pre>
+<h2 id="14-warpsync"><a class="header" href="#14-warpsync">14. Warpsync</a></h2>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">advancementRange</td><td align="left">the used advancement range per warpsync checkpoint</td><td align="left">integer</td></tr>
+</tbody></table>
+<p>Example: </p>
+<pre><code class="language-json">  &quot;warpsync&quot;: {
+    &quot;advancementRange&quot;: 150,
+  }
+</code></pre>
+<h2 id="15-spammer"><a class="header" href="#15-spammer">15. Spammer</a></h2>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">message</td><td align="left">the message to embed within the spam messages</td><td align="left">string</td></tr>
+<tr><td align="left">index</td><td align="left">the indexation of the message</td><td align="left">string</td></tr>
+<tr><td align="left">indexSemiLazy</td><td align="left">the indexation of the message if the semi-lazy pool is used (uses &quot;index&quot; if empty)</td><td align="left">string</td></tr>
+<tr><td align="left">cpuMaxUsage</td><td align="left">workers remains idle for a while when cpu usage gets over this limit (0 = disable)</td><td align="left">float</td></tr>
+<tr><td align="left">mpsRateLimit</td><td align="left">the rate limit for the spammer (0 = no limit)</td><td align="left">float</td></tr>
+<tr><td align="left">workers</td><td align="left">the amount of parallel running spammers</td><td align="left">integer</td></tr>
+<tr><td align="left">autostart</td><td align="left">automatically start the spammer on node startup</td><td align="left">bool</td></tr>
+</tbody></table>
+<p>Example: </p>
+<pre><code class="language-json">  &quot;spammer&quot;: {
+    &quot;message&quot;: &quot;Binary is the future.&quot;,
+    &quot;index&quot;: &quot;HORNET Spammer&quot;,
+    &quot;indexSemiLazy&quot;: &quot;HORNET Spammer Semi-Lazy&quot;,
+    &quot;cpuMaxUsage&quot;: 0.5,
+    &quot;mpsRateLimit&quot;: 0,
+    &quot;workers&quot;: 1,
+    &quot;autostart&quot;: false
+  },
+</code></pre>
+<h2 id="16-mqtt"><a class="header" href="#16-mqtt">16. MQTT</a></h2>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">bindAddress</td><td align="left">bind address on which the MQTT broker listens on</td><td align="left">string</td></tr>
+<tr><td align="left">wsPort</td><td align="left">port of the WebSocket MQTT broker</td><td align="left">integer</td></tr>
+<tr><td align="left">workerCount</td><td align="left">number of parallel workers the MQTT broker uses to publish messages</td><td align="left">integer</td></tr>
+</tbody></table>
+<p>Example:</p>
+<pre><code class="language-json">  &quot;mqtt&quot;: {
+    &quot;bindAddress&quot;: &quot;localhost:1883&quot;,
+    &quot;wsPort&quot;: 1888,
+    &quot;workerCount&quot;: 100
+  },
+</code></pre>
+<h2 id="17-profiling"><a class="header" href="#17-profiling">17. Profiling</a></h2>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">bindAddress</td><td align="left">the bind address on which the profiler listens on</td><td align="left">string</td></tr>
+</tbody></table>
+<p>Example:</p>
+<pre><code class="language-json">  &quot;profiling&quot;: {
+    &quot;bindAddress&quot;: &quot;localhost:6060&quot;
+  },
+</code></pre>
+<h2 id="18-prometheus"><a class="header" href="#18-prometheus">18. Prometheus</a></h2>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">bindAddress</td><td align="left">the bind address on which the Prometheus exporter listens on</td><td align="left">string</td></tr>
+<tr><td align="left"><a href="configuration/config.html#fileservicediscovery">fileServiceDiscovery</a></td><td align="left">config for file service discovery</td><td align="left">object</td></tr>
+<tr><td align="left">databaseMetrics</td><td align="left">include database metrics</td><td align="left">bool</td></tr>
+<tr><td align="left">nodeMetrics</td><td align="left">include node metrics</td><td align="left">bool</td></tr>
+<tr><td align="left">gossipMetrics</td><td align="left">include gossip metrics</td><td align="left">bool</td></tr>
+<tr><td align="left">cachesMetrics</td><td align="left">include caches metrics</td><td align="left">bool</td></tr>
+<tr><td align="left">restAPIMetrics</td><td align="left">include restAPI metrics</td><td align="left">bool</td></tr>
+<tr><td align="left">migrationMetrics</td><td align="left">include migration metrics</td><td align="left">bool</td></tr>
+<tr><td align="left">coordinatorMetrics</td><td align="left">include coordinator metrics</td><td align="left">bool</td></tr>
+<tr><td align="left">debugMetrics</td><td align="left">include debug metrics</td><td align="left">bool</td></tr>
+<tr><td align="left">goMetrics</td><td align="left">include go metrics</td><td align="left">bool</td></tr>
+<tr><td align="left">processMetrics</td><td align="left">include process metrics</td><td align="left">bool</td></tr>
+<tr><td align="left">promhttpMetrics</td><td align="left">include promhttp metrics</td><td align="left">bool</td></tr>
+</tbody></table>
+<h3 id="fileservicediscovery"><a class="header" href="#fileservicediscovery">FileServiceDiscovery</a></h3>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">enabled</td><td align="left">whether the plugin should write a Prometheus 'file SD' file</td><td align="left">bool</td></tr>
+<tr><td align="left">path</td><td align="left">the path where to write the 'file SD' file to</td><td align="left">string</td></tr>
+<tr><td align="left">target</td><td align="left">the target to write into the 'file SD' file</td><td align="left">string</td></tr>
+</tbody></table>
+<p>Example:</p>
+<pre><code class="language-json">  &quot;prometheus&quot;: {
+    &quot;bindAddress&quot;: &quot;localhost:9311&quot;,
+    &quot;fileServiceDiscovery&quot;: {
+      &quot;enabled&quot;: false,
+      &quot;path&quot;: &quot;target.json&quot;,
+      &quot;target&quot;: &quot;localhost:9311&quot;
+    },
+    &quot;databaseMetrics&quot;: true,
+    &quot;nodeMetrics&quot;: true,
+    &quot;gossipMetrics&quot;: true,
+    &quot;cachesMetrics&quot;: true,
+    &quot;restAPIMetrics&quot;: true,
+    &quot;migrationMetrics&quot;: true,
+    &quot;coordinatorMetrics&quot;: true,
+    &quot;debugMetrics&quot;: false,
+    &quot;goMetrics&quot;: false,
+    &quot;processMetrics&quot;: false,
+    &quot;promhttpMetrics&quot;: false
+  }
+</code></pre>
+<h2 id="19-gossip"><a class="header" href="#19-gossip">19. Gossip</a></h2>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">streamReadTimeout</td><td align="left">the read timeout for reads from the gossip stream</td><td align="left">string</td></tr>
+<tr><td align="left">streamWriteTimeout</td><td align="left">the write timeout for writes to the gossip stream</td><td align="left">string</td></tr>
+</tbody></table>
+<p>Example: </p>
+<pre><code class="language-json">  &quot;gossip&quot;: {
+    &quot;streamReadTimeout&quot;: &quot;1m&quot;,
+    &quot;streamWriteTimeout&quot;: &quot;10s&quot;,
+  }
+</code></pre>
+<h2 id="20-debug"><a class="header" href="#20-debug">20. Debug</a></h2>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">whiteFlagParentsSolidTimeout</td><td align="left">defines the the maximum duration for the parents to become solid during white flag confirmation API call</td><td align="left">string</td></tr>
+</tbody></table>
+<p>Example: </p>
+<pre><code class="language-json">  &quot;debug&quot;: {
+    &quot;whiteFlagParentsSolidTimeout&quot;: &quot;2s&quot;,
+  }
+</code></pre>
+<h2 id="21-legacy"><a class="header" href="#21-legacy">21. Legacy</a></h2>
+<p>This is part the config used in the migration from IOTA 1.0 to IOTA 1.5 (Chrysalis)</p>
+<h2 id="211-migrator"><a class="header" href="#211-migrator">21.1 Migrator</a></h2>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">queryCooldownPeriod</td><td align="left">the cooldown period of the service to ask for new data</td><td align="left">string</td></tr>
+<tr><td align="left">receiptMaxEntries</td><td align="left">the max amount of entries to embed within a receipt</td><td align="left">integer</td></tr>
+<tr><td align="left">stateFilePath</td><td align="left">path to the state file of the migrator</td><td align="left">string</td></tr>
+</tbody></table>
+<p>Example:</p>
+<pre><code class="language-json">  &quot;migrator&quot;: {
+    &quot;queryCooldownPeriod&quot;: &quot;5s&quot;,
+    &quot;receiptMaxEntries&quot;: 110,
+    &quot;stateFilePath&quot;: &quot;migrator.state&quot;,
+  }
+</code></pre>
+<h2 id="212-receipts"><a class="header" href="#212-receipts">21.2 Receipts</a></h2>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left"><a href="configuration/config.html#backup">backup</a></td><td align="left">config for backup</td><td align="left">object</td></tr>
+<tr><td align="left"><a href="configuration/config.html#validator">validator</a></td><td align="left">config for validator</td><td align="left">object</td></tr>
+</tbody></table>
+<h3 id="backup"><a class="header" href="#backup">Backup</a></h3>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">enabled</td><td align="left">whether to backup receipts in the backup folder</td><td align="left">bool</td></tr>
+<tr><td align="left">folder</td><td align="left">path to the receipts backup folder</td><td align="left">string</td></tr>
+</tbody></table>
+<h3 id="validator"><a class="header" href="#validator">Validator</a></h3>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left"><a href="configuration/config.html#api">api</a></td><td align="left">config for legacy API</td><td align="left">object</td></tr>
+<tr><td align="left"><a href="configuration/config.html#coordinator">coordinator</a></td><td align="left">config for legacy Coordinator</td><td align="left">object</td></tr>
+<tr><td align="left">ignoreSoftErrors</td><td align="left">whether to ignore soft errors and not panic if one is encountered</td><td align="left">bool</td></tr>
+<tr><td align="left">validate</td><td align="left">whether to validate receipts</td><td align="left">bool</td></tr>
+</tbody></table>
+<h4 id="api"><a class="header" href="#api">Api</a></h4>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">address</td><td align="left">address of the legacy node API</td><td align="left">string</td></tr>
+<tr><td align="left">timeout</td><td align="left">timeout of API calls</td><td align="left">string</td></tr>
+</tbody></table>
+<h4 id="coordinator"><a class="header" href="#coordinator">Coordinator</a></h4>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">address</td><td align="left">address of the legacy coordinator</td><td align="left">string</td></tr>
+<tr><td align="left">merkleTreeDepth</td><td align="left">depth of the Merkle tree of the coordinator</td><td align="left">integer</td></tr>
+</tbody></table>
+<p>Example:</p>
+<pre><code class="language-json">  &quot;receipts&quot;: {
+    &quot;backup&quot;: {
+      &quot;enabled&quot;: false,
+      &quot;folder&quot;: &quot;receipts&quot;,
+    },
+    &quot;validator&quot;: {
+      &quot;api&quot;: {
+        &quot;address&quot;: &quot;http://localhost:14266&quot;,
+        &quot;timeout&quot;: &quot;5s&quot;,
+      },
+      &quot;coordinator&quot;: {
+        &quot;address&quot;: &quot;JFQ999DVN9CBBQX9DSAIQRAFRALIHJMYOXAQSTCJLGA9DLOKIWHJIFQKMCQ9QHWW9RXQMDBVUIQNIY9GZ&quot;,
+        &quot;merkleTreeDepth&quot;: 18,
+      },
+      &quot;ignoreSoftErrors&quot;: false,
+      &quot;validate&quot;: false,
+    },
+  }
+</code></pre>
+<h1 id="peeringjson"><a class="header" href="#peeringjson">peering.json</a></h1>
+<h1 id="profilesjson"><a class="header" href="#profilesjson">profiles.json</a></h1>
 <h1 id="api-reference"><a class="header" href="#api-reference">API Reference</a></h1>
 <p>This document specifies the REST API for IOTA node software:</p>
 <ul>
