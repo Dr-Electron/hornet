@@ -164,6 +164,31 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="peeringjson"><a class="header" href="#peeringjson">peering.json</a></h1>
+<p>The easiest way to add peers in Hornet is over the Dashboard. Simply go to <code>Peers</code> and click on <code>Add Peer</code>.<br />
+But for the sake of completeness this document describes the structure of the <code>peering.json</code> file.</p>
+<p>The <code>peering.json</code> file contains a list of peers. Peers have the following attributes:</p>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">alias</td><td align="left">alias of the peer</td><td align="left">string</td></tr>
+<tr><td align="left">multiAddress</td><td align="left">multiAddress of the peer</td><td align="left">string</td></tr>
+</tbody></table>
+<p>Example:</p>
+<pre><code class="language-json">{
+  &quot;peers&quot;: [
+    {
+      &quot;alias&quot;: &quot;Node1&quot;,
+      &quot;multiAddress&quot;: &quot;/ip4/192.0.2.0/tcp/15600/p2p/12D3KooWCKWcTWevORKa2KEBputEGASvEBuDfRDSbe8t1DWugUmL&quot;
+    },
+    {
+      &quot;alias&quot;: &quot;Node2&quot;,
+      &quot;multiAddress&quot;: &quot;/ip6/2001:db8:3333:4444:5555:6666:7777:8888/tcp/16600/p2p/12D3KooWJDqHjhd8us8XdbKy1Adp5nV6XoI7XhjZbPWAfbAbkLbH&quot;
+    },
+    {
+      &quot;alias&quot;: &quot;Node3&quot;,
+      &quot;multiAddress&quot;: &quot;/dns/example.com/tcp/15600/p2p/12D3KooWN7F4eRAYbavnasME8WGXwkrpzWWoZSXfNSEpudmWi9YP&quot;
+    }
+  ]
+}
+</code></pre>
 
                     </main>
 
