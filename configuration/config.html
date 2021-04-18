@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../welcome.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li class="chapter-item expanded "><a href="../tutorials/index.html"><strong aria-hidden="true">2.</strong> Tutorials</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tutorials/1.0/index.html"><strong aria-hidden="true">2.1.</strong> IOTA 1.0</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tutorials/1.0/setup.html"><strong aria-hidden="true">2.1.1.</strong> Setup HORNET</a></li><li class="chapter-item expanded "><a href="../tutorials/1.0/private_tangle.html"><strong aria-hidden="true">2.1.2.</strong> Run a private Tangle</a></li><li class="chapter-item expanded "><a href="../tutorials/1.0/entry_node.html"><strong aria-hidden="true">2.1.3.</strong> Hosting An Entry Node</a></li></ol></li><li class="chapter-item expanded "><a href="../tutorials/1.5/index.html"><strong aria-hidden="true">2.2.</strong> Chrysalis IOTA 1.5</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tutorials/1.5/build.html"><strong aria-hidden="true">2.2.1.</strong> Build HORNET</a></li><li class="chapter-item expanded "><a href="../tutorials/1.5/run.html"><strong aria-hidden="true">2.2.2.</strong> Run HORNET</a></li><li class="chapter-item expanded "><a href="../tutorials/1.5/private_tangle.html"><strong aria-hidden="true">2.2.3.</strong> Run a private tangle</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../configuration/index.html"><strong aria-hidden="true">3.</strong> Configuration</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../configuration/config.html" class="active"><strong aria-hidden="true">3.1.</strong> config.json</a></li><li class="chapter-item expanded "><a href="../configuration/peering.html"><strong aria-hidden="true">3.2.</strong> peering.json</a></li></ol></li><li class="chapter-item expanded "><a href="../api-reference.html"><strong aria-hidden="true">4.</strong> API Reference</a></li><li class="chapter-item expanded "><a href="../troubleshooting.html"><strong aria-hidden="true">5.</strong> Troubleshooting</a></li><li class="chapter-item expanded "><a href="../faq.html"><strong aria-hidden="true">6.</strong> FAQ</a></li><li class="chapter-item expanded "><a href="../Contribution.html"><strong aria-hidden="true">7.</strong> Contribution</a></li><li class="chapter-item expanded "><a href="../code_of_conduct.html"><strong aria-hidden="true">8.</strong> Code of Conduct</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../welcome.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li class="chapter-item expanded "><a href="../tutorials/index.html"><strong aria-hidden="true">2.</strong> Tutorials</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tutorials/build.html"><strong aria-hidden="true">2.1.</strong> Build HORNET</a></li><li class="chapter-item expanded "><a href="../tutorials/run.html"><strong aria-hidden="true">2.2.</strong> Run HORNET</a></li><li class="chapter-item expanded "><a href="../tutorials/private_tangle.html"><strong aria-hidden="true">2.3.</strong> Run a private tangle</a></li></ol></li><li class="chapter-item expanded "><a href="../configuration/index.html"><strong aria-hidden="true">3.</strong> Configuration</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../configuration/config.html" class="active"><strong aria-hidden="true">3.1.</strong> config.json</a></li><li class="chapter-item expanded "><a href="../configuration/peering.html"><strong aria-hidden="true">3.2.</strong> peering.json</a></li></ol></li><li class="chapter-item expanded "><a href="../api-reference.html"><strong aria-hidden="true">4.</strong> API Reference</a></li><li class="chapter-item expanded "><a href="../troubleshooting.html"><strong aria-hidden="true">5.</strong> Troubleshooting</a></li><li class="chapter-item expanded "><a href="../faq.html"><strong aria-hidden="true">6.</strong> FAQ</a></li><li class="chapter-item expanded "><a href="../Contribution.html"><strong aria-hidden="true">7.</strong> Contribution</a></li><li class="chapter-item expanded "><a href="../code_of_conduct.html"><strong aria-hidden="true">8.</strong> Code of Conduct</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -166,13 +166,14 @@
                         <h1 id="configjson"><a class="header" href="#configjson">config.json</a></h1>
 <p>Hornet uses the JSON standard as config file. If you are unsure about some syntax have a look at the official specs <a href="https://www.json.org">here</a>.
 The default config file is <code>config.json</code>. You can change the path or name of the config file by using the <code>-c</code> or <code>--config</code> flag.
-For Example: <code>hornet -c config_example.json</code>.<br />
+For Example: <code>hornet -c config_example.json</code>.
 You can always get the most up-to-date description of the config parameters by running <code>hornet -h --full</code>.</p>
 <h2 id="table-of-content"><a class="header" href="#table-of-content">Table of content</a></h2>
 <ul>
+<li><a href="#table-of-content">Table of content</a></li>
 <li><a href="#1-rest-api">1. REST API</a>
 <ul>
-<li><a href="#basic-auth">Basic auth</a></li>
+<li><a href="#jwt-auth">JWT Auth</a></li>
 <li><a href="#limits">Limits</a></li>
 </ul>
 </li>
@@ -193,15 +194,16 @@ You can always get the most up-to-date description of the config parameters by r
 <li><a href="#publickeyranges">PublicKeyRanges</a></li>
 </ul>
 </li>
-<li><a href="#7-requsts">7. Requsts</a></li>
-<li><a href="#8-coordinator">8. Coordinator</a>
+<li><a href="#7-proof-of-work">7. Proof of Work</a></li>
+<li><a href="#8-requests">8. Requests</a></li>
+<li><a href="#9-coordinator">9. Coordinator</a>
 <ul>
 <li><a href="#checkpoints">Checkpoints</a></li>
 <li><a href="#quorum">Quorum</a>
 <ul>
 <li><a href="#groups">Groups</a>
 <ul>
-<li><a href="#-group-name-">{GROUP_NAME}</a></li>
+<li><a href="#group_name">{GROUP_NAME}</a></li>
 </ul>
 </li>
 </ul>
@@ -210,34 +212,35 @@ You can always get the most up-to-date description of the config parameters by r
 <li><a href="#tipsel">Tipsel</a></li>
 </ul>
 </li>
-<li><a href="#9-tipsel">9. Tipsel</a>
+<li><a href="#10-tangle">10. Tangle</a></li>
+<li><a href="#11-tipsel">11. Tipsel</a>
 <ul>
 <li><a href="#nonlazy">NonLazy</a></li>
 <li><a href="#semilazy">SemiLazy</a></li>
 </ul>
 </li>
-<li><a href="#10-node">10. Node</a></li>
-<li><a href="#11-p2p">11. P2P</a>
+<li><a href="#12-node">12. Node</a></li>
+<li><a href="#13-p2p">13. P2P</a>
 <ul>
 <li><a href="#connectionmanager">ConnectionManager</a></li>
 <li><a href="#peerstore">PeerStore</a></li>
 </ul>
 </li>
-<li><a href="#13-logger">13. Logger</a></li>
-<li><a href="#14-warpsync">14. Warpsync</a></li>
-<li><a href="#15-spammer">15. Spammer</a></li>
-<li><a href="#16-mqtt">16. MQTT</a></li>
-<li><a href="#17-profiling">17. Profiling</a></li>
-<li><a href="#18-prometheus">18. Prometheus</a>
+<li><a href="#14-logger">14. Logger</a></li>
+<li><a href="#15-warpsync">15. Warpsync</a></li>
+<li><a href="#16-spammer">16. Spammer</a></li>
+<li><a href="#17-mqtt">17. MQTT</a></li>
+<li><a href="#18-profiling">18. Profiling</a></li>
+<li><a href="#19-prometheus">19. Prometheus</a>
 <ul>
 <li><a href="#fileservicediscovery">FileServiceDiscovery</a></li>
 </ul>
 </li>
-<li><a href="#19-gossip">19. Gossip</a></li>
-<li><a href="#20-debug">20. Debug</a></li>
-<li><a href="#21-legacy">21. Legacy</a></li>
-<li><a href="#211-migrator">21.1 Migrator</a></li>
-<li><a href="#212-receipts">21.2 Receipts</a>
+<li><a href="#20-gossip">20. Gossip</a></li>
+<li><a href="#21-debug">21. Debug</a></li>
+<li><a href="#22-legacy">22. Legacy</a></li>
+<li><a href="#221-migrator">22.1 Migrator</a></li>
+<li><a href="#222-receipts">22.2 Receipts</a>
 <ul>
 <li><a href="#backup">Backup</a></li>
 <li><a href="#validator">Validator</a>
@@ -252,7 +255,7 @@ You can always get the most up-to-date description of the config parameters by r
 <hr />
 <h2 id="1-rest-api"><a class="header" href="#1-rest-api">1. REST API</a></h2>
 <table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
-<tr><td align="left"><a href="#basic-auth">basicAuth</a></td><td align="left">config for basic auth</td><td align="left">object</td></tr>
+<tr><td align="left"><a href="#jwt-auth">jwtAuth</a></td><td align="left">config for JWT auth</td><td align="left">object</td></tr>
 <tr><td align="left">permittedRoutes</td><td align="left">the allowed HTTP REST routes which can be called from non whitelisted addresses</td><td align="left">array of strings</td></tr>
 <tr><td align="left">whitelistedAddresses</td><td align="left">the whitelist of addresses which are allowed to access the REST API</td><td align="left">array of strings</td></tr>
 <tr><td align="left">bindAddress</td><td align="left">the bind address on which the REST API listens on</td><td align="left">string</td></tr>
@@ -261,12 +264,10 @@ You can always get the most up-to-date description of the config parameters by r
 <tr><td align="left"><a href="#limits">limits</a></td><td align="left">config for api limits</td><td align="left">object</td></tr>
 <tr><td align="left">excludeHealthCheckFromAuth</td><td align="left">whether to allow the health check route anyways</td><td align="left">bool</td></tr>
 </tbody></table>
-<h3 id="basic-auth"><a class="header" href="#basic-auth">Basic auth</a></h3>
+<h3 id="jwt-auth"><a class="header" href="#jwt-auth">JWT Auth</a></h3>
 <table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
-<tr><td align="left">enabled</td><td align="left">whether to use HTTP basic auth for the REST API</td><td align="left">bool</td></tr>
-<tr><td align="left">userName</td><td align="left">the username of the HTTP basic auth</td><td align="left">string</td></tr>
-<tr><td align="left">passwordHash</td><td align="left">the HTTP basic auth password+salt as a scrypt hash</td><td align="left">string</td></tr>
-<tr><td align="left">passwordSalt</td><td align="left">the HTTP basic auth salt used for hashing the password</td><td align="left">string</td></tr>
+<tr><td align="left">enabled</td><td align="left">whether to use JWT auth for the REST API</td><td align="left">bool</td></tr>
+<tr><td align="left">salt</td><td align="left">salt used inside the JWT tokens for the REST API. Change this to a different value to invalidate JWT tokens not matching this new value</td><td align="left">string</td></tr>
 </tbody></table>
 <h3 id="limits"><a class="header" href="#limits">Limits</a></h3>
 <table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
@@ -275,12 +276,7 @@ You can always get the most up-to-date description of the config parameters by r
 </tbody></table>
 <p>Example:</p>
 <pre><code class="language-json">  &quot;restAPI&quot;: {
-    &quot;basicAuth&quot;: {
-      &quot;enabled&quot;: false,
-      &quot;userName&quot;: &quot;admin&quot;,
-      &quot;passwordHash&quot;: &quot;0000000000000000000000000000000000000000000000000000000000000000&quot;,
-      &quot;passwordSalt&quot;: &quot;0000000000000000000000000000000000000000000000000000000000000000&quot;
-    },
+    &quot;authEnabled&quot;: false,
     &quot;excludeHealthCheckFromAuth&quot;: false,
     &quot;permittedRoutes&quot;: [
       &quot;/health&quot;,
@@ -361,6 +357,7 @@ You can always get the most up-to-date description of the config parameters by r
 <tr><td align="left">depth</td><td align="left">the depth, respectively the starting point, at which a snapshot of the ledger is generated</td><td align="left">integer</td></tr>
 <tr><td align="left">fullPath</td><td align="left">path to the full snapshot file</td><td align="left">string</td></tr>
 <tr><td align="left">deltaPath</td><td align="left">path to the delta snapshot file</td><td align="left">string</td></tr>
+<tr><td align="left">deltaSizeThresholdPercentage</td><td align="left">create a full snapshot if the size of a delta snapshot reaches a certain percentage of the full snapshot  (0.0 = always create delta snapshot to keep ms diff history)</td><td align="left">float</td></tr>
 <tr><td align="left"><a href="#downloadurls">downloadURLs</a></td><td align="left">URLs to load the snapshot files from.</td><td align="left">array of objects</td></tr>
 </tbody></table>
 <h3 id="downloadurls"><a class="header" href="#downloadurls">DownloadURLs</a></h3>
@@ -374,6 +371,7 @@ You can always get the most up-to-date description of the config parameters by r
     &quot;depth&quot;: 50,
     &quot;fullPath&quot;: &quot;snapshots/mainnet/full_export.bin&quot;,
     &quot;deltaPath&quot;: &quot;snapshots/mainnet/delta_export.bin&quot;,
+    &quot;deltaSizeThresholdPercentage&quot;: 50.0,
     &quot;downloadURLs&quot;: [
       {
         &quot;full&quot;: &quot;https://source1.example.com/full_export.bin&quot;,
@@ -438,7 +436,16 @@ You can always get the most up-to-date description of the config parameters by r
     ]
   },
 </code></pre>
-<h2 id="7-requsts"><a class="header" href="#7-requsts">7. Requsts</a></h2>
+<h2 id="7-proof-of-work"><a class="header" href="#7-proof-of-work">7. Proof of Work</a></h2>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">refreshTipsInterval</td><td align="left">interval for refreshing tips during PoW for spammer messages and messages passed without parents via API</td><td align="left">string</td></tr>
+</tbody></table>
+<p>Example:</p>
+<pre><code class="language-json">  &quot;pow&quot;: {
+    &quot;refreshTipsInterval&quot;: &quot;5s&quot;
+  },
+</code></pre>
+<h2 id="8-requests"><a class="header" href="#8-requests">8. Requests</a></h2>
 <table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
 <tr><td align="left">discardOlderThan</td><td align="left">the maximum time a request stays in the request queue</td><td align="left">string</td></tr>
 <tr><td align="left">pendingReEnqueueInterval</td><td align="left">the interval the pending requests are re-enqueued</td><td align="left">string</td></tr>
@@ -449,7 +456,7 @@ You can always get the most up-to-date description of the config parameters by r
     &quot;pendingReEnqueueInterval&quot;: &quot;5s&quot;
   },
 </code></pre>
-<h2 id="8-coordinator"><a class="header" href="#8-coordinator">8. Coordinator</a></h2>
+<h2 id="9-coordinator"><a class="header" href="#9-coordinator">9. Coordinator</a></h2>
 <table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
 <tr><td align="left"><a href="#checkpoints">checkpoints</a></td><td align="left">config for checkpoints</td><td align="left">object</td></tr>
 <tr><td align="left">interval</td><td align="left">the interval milestones are issued</td><td align="left">string</td></tr>
@@ -534,7 +541,16 @@ You can always get the most up-to-date description of the config parameters by r
     }
   },
 </code></pre>
-<h2 id="9-tipsel"><a class="header" href="#9-tipsel">9. Tipsel</a></h2>
+<h2 id="10-tangle"><a class="header" href="#10-tangle">10. Tangle</a></h2>
+<table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
+<tr><td align="left">milestoneTimeout</td><td align="left">the interval milestone timeout events are fired if no new milestones are received</td><td align="left">string</td></tr>
+</tbody></table>
+<p>Example:</p>
+<pre><code class="language-json">  &quot;tangle&quot;: {
+    &quot;milestoneTimeout&quot;: &quot;30s&quot;
+  },
+</code></pre>
+<h2 id="11-tipsel"><a class="header" href="#11-tipsel">11. Tipsel</a></h2>
 <table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
 <tr><td align="left">maxDeltaMsgYoungestConeRootIndexToCMI</td><td align="left">the maximum allowed delta value for the YCRI of a given message in relation to the current CMI before it gets lazy</td><td align="left">integer</td></tr>
 <tr><td align="left">maxDeltaMsgOldestConeRootIndexToCMI</td><td align="left">the maximum allowed delta value between OCRI of a given message in relation to the current CMI before it gets semi-lazy</td><td align="left">integer</td></tr>
@@ -575,10 +591,10 @@ You can always get the most up-to-date description of the config parameters by r
     }
   },
 </code></pre>
-<h2 id="10-node"><a class="header" href="#10-node">10. Node</a></h2>
+<h2 id="12-node"><a class="header" href="#12-node">12. Node</a></h2>
 <table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
 <tr><td align="left">alias</td><td align="left">the alias to identify a node</td><td align="left">string</td></tr>
-<tr><td align="left">profile</td><td align="left">Sets the profile with which the node runs</td><td align="left">string</td></tr>
+<tr><td align="left">profile</td><td align="left">the profile the node runs with</td><td align="left">string</td></tr>
 <tr><td align="left">disablePlugins</td><td align="left">a list of plugins that shall be disabled</td><td align="left">array of strings</td></tr>
 <tr><td align="left">enablePlugins</td><td align="left">a list of plugins that shall be enabled</td><td align="left">array of strings</td></tr>
 </tbody></table>
@@ -595,7 +611,7 @@ You can always get the most up-to-date description of the config parameters by r
     ]
   },
 </code></pre>
-<h2 id="11-p2p"><a class="header" href="#11-p2p">11. P2P</a></h2>
+<h2 id="13-p2p"><a class="header" href="#13-p2p">13. P2P</a></h2>
 <table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
 <tr><td align="left">bindMultiAddresses</td><td align="left">the bind addresses for this node</td><td align="left">array of strings</td></tr>
 <tr><td align="left"><a href="#connectionmanager">connectionManager</a></td><td align="left">config for connection manager</td><td align="left">object</td></tr>
@@ -630,7 +646,7 @@ You can always get the most up-to-date description of the config parameters by r
     &quot;reconnectInterval&quot;: &quot;30s&quot;
   },
 </code></pre>
-<h2 id="13-logger"><a class="header" href="#13-logger">13. Logger</a></h2>
+<h2 id="14-logger"><a class="header" href="#14-logger">14. Logger</a></h2>
 <table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
 <tr><td align="left">level</td><td align="left">the minimum enabled logging level. Valid values are: &quot;debug&quot;, &quot;info&quot;, &quot;warn&quot;, &quot;error&quot;, &quot;dpanic&quot;, &quot;panic&quot;, &quot;fatal&quot;</td><td align="left">string</td></tr>
 <tr><td align="left">disableCaller</td><td align="left">stops annotating logs with the calling function's file name and line number</td><td align="left">bool</td></tr>
@@ -648,16 +664,16 @@ You can always get the most up-to-date description of the config parameters by r
     ]
   },
 </code></pre>
-<h2 id="14-warpsync"><a class="header" href="#14-warpsync">14. Warpsync</a></h2>
+<h2 id="15-warpsync"><a class="header" href="#15-warpsync">15. Warpsync</a></h2>
 <table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
 <tr><td align="left">advancementRange</td><td align="left">the used advancement range per warpsync checkpoint</td><td align="left">integer</td></tr>
 </tbody></table>
-<p>Example: </p>
+<p>Example:</p>
 <pre><code class="language-json">  &quot;warpsync&quot;: {
     &quot;advancementRange&quot;: 150,
   }
 </code></pre>
-<h2 id="15-spammer"><a class="header" href="#15-spammer">15. Spammer</a></h2>
+<h2 id="16-spammer"><a class="header" href="#16-spammer">16. Spammer</a></h2>
 <table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
 <tr><td align="left">message</td><td align="left">the message to embed within the spam messages</td><td align="left">string</td></tr>
 <tr><td align="left">index</td><td align="left">the indexation of the message</td><td align="left">string</td></tr>
@@ -667,7 +683,7 @@ You can always get the most up-to-date description of the config parameters by r
 <tr><td align="left">workers</td><td align="left">the amount of parallel running spammers</td><td align="left">integer</td></tr>
 <tr><td align="left">autostart</td><td align="left">automatically start the spammer on node startup</td><td align="left">bool</td></tr>
 </tbody></table>
-<p>Example: </p>
+<p>Example:</p>
 <pre><code class="language-json">  &quot;spammer&quot;: {
     &quot;message&quot;: &quot;Binary is the future.&quot;,
     &quot;index&quot;: &quot;HORNET Spammer&quot;,
@@ -678,7 +694,7 @@ You can always get the most up-to-date description of the config parameters by r
     &quot;autostart&quot;: false
   },
 </code></pre>
-<h2 id="16-mqtt"><a class="header" href="#16-mqtt">16. MQTT</a></h2>
+<h2 id="17-mqtt"><a class="header" href="#17-mqtt">17. MQTT</a></h2>
 <table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
 <tr><td align="left">bindAddress</td><td align="left">bind address on which the MQTT broker listens on</td><td align="left">string</td></tr>
 <tr><td align="left">wsPort</td><td align="left">port of the WebSocket MQTT broker</td><td align="left">integer</td></tr>
@@ -691,7 +707,7 @@ You can always get the most up-to-date description of the config parameters by r
     &quot;workerCount&quot;: 100
   },
 </code></pre>
-<h2 id="17-profiling"><a class="header" href="#17-profiling">17. Profiling</a></h2>
+<h2 id="18-profiling"><a class="header" href="#18-profiling">18. Profiling</a></h2>
 <table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
 <tr><td align="left">bindAddress</td><td align="left">the bind address on which the profiler listens on</td><td align="left">string</td></tr>
 </tbody></table>
@@ -700,7 +716,7 @@ You can always get the most up-to-date description of the config parameters by r
     &quot;bindAddress&quot;: &quot;localhost:6060&quot;
   },
 </code></pre>
-<h2 id="18-prometheus"><a class="header" href="#18-prometheus">18. Prometheus</a></h2>
+<h2 id="19-prometheus"><a class="header" href="#19-prometheus">19. Prometheus</a></h2>
 <table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
 <tr><td align="left">bindAddress</td><td align="left">the bind address on which the Prometheus exporter listens on</td><td align="left">string</td></tr>
 <tr><td align="left"><a href="#fileservicediscovery">fileServiceDiscovery</a></td><td align="left">config for file service discovery</td><td align="left">object</td></tr>
@@ -743,29 +759,29 @@ You can always get the most up-to-date description of the config parameters by r
     &quot;promhttpMetrics&quot;: false
   }
 </code></pre>
-<h2 id="19-gossip"><a class="header" href="#19-gossip">19. Gossip</a></h2>
+<h2 id="20-gossip"><a class="header" href="#20-gossip">20. Gossip</a></h2>
 <table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
 <tr><td align="left">streamReadTimeout</td><td align="left">the read timeout for reads from the gossip stream</td><td align="left">string</td></tr>
 <tr><td align="left">streamWriteTimeout</td><td align="left">the write timeout for writes to the gossip stream</td><td align="left">string</td></tr>
 </tbody></table>
-<p>Example: </p>
+<p>Example:</p>
 <pre><code class="language-json">  &quot;gossip&quot;: {
     &quot;streamReadTimeout&quot;: &quot;1m&quot;,
     &quot;streamWriteTimeout&quot;: &quot;10s&quot;,
   }
 </code></pre>
-<h2 id="20-debug"><a class="header" href="#20-debug">20. Debug</a></h2>
+<h2 id="21-debug"><a class="header" href="#21-debug">21. Debug</a></h2>
 <table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
 <tr><td align="left">whiteFlagParentsSolidTimeout</td><td align="left">defines the the maximum duration for the parents to become solid during white flag confirmation API call</td><td align="left">string</td></tr>
 </tbody></table>
-<p>Example: </p>
+<p>Example:</p>
 <pre><code class="language-json">  &quot;debug&quot;: {
     &quot;whiteFlagParentsSolidTimeout&quot;: &quot;2s&quot;,
   }
 </code></pre>
-<h2 id="21-legacy"><a class="header" href="#21-legacy">21. Legacy</a></h2>
+<h2 id="22-legacy"><a class="header" href="#22-legacy">22. Legacy</a></h2>
 <p>This is part the config used in the migration from IOTA 1.0 to IOTA 1.5 (Chrysalis)</p>
-<h2 id="211-migrator"><a class="header" href="#211-migrator">21.1 Migrator</a></h2>
+<h2 id="221-migrator"><a class="header" href="#221-migrator">22.1 Migrator</a></h2>
 <table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
 <tr><td align="left">queryCooldownPeriod</td><td align="left">the cooldown period of the service to ask for new data</td><td align="left">string</td></tr>
 <tr><td align="left">receiptMaxEntries</td><td align="left">the max amount of entries to embed within a receipt</td><td align="left">integer</td></tr>
@@ -778,7 +794,7 @@ You can always get the most up-to-date description of the config parameters by r
     &quot;stateFilePath&quot;: &quot;migrator.state&quot;,
   }
 </code></pre>
-<h2 id="212-receipts"><a class="header" href="#212-receipts">21.2 Receipts</a></h2>
+<h2 id="222-receipts"><a class="header" href="#222-receipts">22.2 Receipts</a></h2>
 <table><thead><tr><th align="left">Name</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
 <tr><td align="left"><a href="#backup">backup</a></td><td align="left">config for backup</td><td align="left">object</td></tr>
 <tr><td align="left"><a href="#validator">validator</a></td><td align="left">config for validator</td><td align="left">object</td></tr>
