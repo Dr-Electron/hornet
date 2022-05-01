@@ -1,5 +1,5 @@
 {
-  "name": "hornet",
+  "name": "hornet-develop",
   "version": "0.0.0",
   "scripts": {
     "start": "iota-wiki-cli start",
